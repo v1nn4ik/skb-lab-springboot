@@ -9,21 +9,24 @@ import javax.annotation.PreDestroy;
 
 @Component
 public class Computer implements Device {
+
     //region создаются и внедряются два бина разных классов, но реализующих один интерфейс
 
-    private Program discord;
-    private Program steam;
+    private Program program1;
+    private Program program2;
 
     @Autowired
-    public Computer(@Qualifier("discord") Program discord,
-                       @Qualifier("steam") Program steam) {
-        this.discord = discord;
-        this.steam = steam;
+    public Computer(@Qualifier("discord") Program program1,
+                    @Qualifier("steam") Program program2) {
+        this.program1 = program1;
+        this.program2 = program2;
     }
 
     public String playGameWithFriends() {
-        return discord + "plays" + steam;
+        return program1 + "plays" + program2;
     }
+
+    //endregion
 
     @PostConstruct
     public void init() {
@@ -34,8 +37,6 @@ public class Computer implements Device {
     public void destroy() {
         System.out.println("Computer destroying...");
     }
-
-    //endregion
 
     //region Field Injection
 
