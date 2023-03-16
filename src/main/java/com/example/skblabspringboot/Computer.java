@@ -8,6 +8,11 @@ import javax.annotation.PreDestroy;
 
 @Component
 public class Computer implements Device {
+    @Autowired
+    private Discord discord;
+    @Autowired
+    private Steam steam;
+
     @PostConstruct
     public void init() {
         System.out.println("Computer initialized...");
@@ -33,7 +38,6 @@ public class Computer implements Device {
 
     private Screen screen;
 
-    @Autowired
     public Computer(Screen screen) {
         this.screen = screen;
     }
@@ -47,10 +51,6 @@ public class Computer implements Device {
     //region Setter Injection
 
     private Keyboard keyboard;
-
-    public Computer(Keyboard keyboard) {
-        this.keyboard = keyboard;
-    }
 
     @Autowired
     public void setKeyboard(Keyboard keyboard) {
