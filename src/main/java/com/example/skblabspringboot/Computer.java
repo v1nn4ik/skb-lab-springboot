@@ -10,24 +10,6 @@ import javax.annotation.PreDestroy;
 @Component
 public class Computer implements Device {
 
-    //region создаются и внедряются два бина разных классов, но реализующих один интерфейс
-
-    private Program program1;
-    private Program program2;
-
-    @Autowired
-    public Computer(@Qualifier("discord") Program program1,
-                    @Qualifier("steam") Program program2) {
-        this.program1 = program1;
-        this.program2 = program2;
-    }
-
-    public String playGameWithFriends() {
-        return program1 + "plays" + program2;
-    }
-
-    //endregion
-
     @PostConstruct
     public void init() {
         System.out.println("Computer initialized...");
@@ -37,6 +19,25 @@ public class Computer implements Device {
     public void destroy() {
         System.out.println("Computer destroying...");
     }
+
+    //region создаются и внедряются два бина разных классов, но реализующих один интерфейс
+
+    private final Program program1;
+    private final Program program2;
+
+    public Computer(@Qualifier("discord") Program program1,
+                    @Qualifier("steam") Program program2,
+                    Screen screen) {
+        this.program1 = program1;
+        this.program2 = program2;
+        this.screen = screen;
+    }
+
+    public String playGameWithFriends() {
+        return program1 + "plays" + program2;
+    }
+
+    //endregion
 
     //region Field Injection
 
@@ -51,11 +52,7 @@ public class Computer implements Device {
 
     //region Constructor Injection
 
-    private Screen screen;
-
-    public Computer(Screen screen) {
-        this.screen = screen;
-    }
+    private final Screen screen;
 
     public void getScreenResolution() {
         System.out.println(screen.getResolution());
