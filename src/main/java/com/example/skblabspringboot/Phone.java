@@ -10,7 +10,7 @@ import javax.annotation.PreDestroy;
 public class Phone implements Device {
     @PostConstruct
     public void init() {
-        System.out.println("Phone initialized...");
+        System.out.printf("Phone initialized: %s %s\n", getPrice(), getWeight());
     }
 
     @PreDestroy

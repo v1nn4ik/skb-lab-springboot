@@ -17,6 +17,6 @@ public class Screen {
         System.out.println("Screen destroying...");
     }
     public String getResolution() {
-        return "1920 * 1080";
+        return "1920*1080";
     }
 }

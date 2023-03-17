@@ -9,10 +9,11 @@ import javax.annotation.PreDestroy;
 
 @Component
 public class Computer implements Device {
-
     @PostConstruct
     public void init() {
-        System.out.println("Computer initialized...");
+        System.out.printf("Computer initialized: %s %s %s %s %d\n", getPrice(), getWeight(), getProcessorType(),
+                getScreenResolution(), getNumberOfButtonsOnKeyboard());
+        System.out.println(playGameWithFriends());
     }
 
     @PreDestroy
@@ -34,7 +35,7 @@ public class Computer implements Device {
     }
 
     public String playGameWithFriends() {
-        return program1 + "plays" + program2;
+        return program1.getName() + " plays " + program2.getName();
     }
 
     //endregion
@@ -44,8 +45,8 @@ public class Computer implements Device {
     @Autowired
     private Processor processor;
 
-    public void getProcessorType() {
-        System.out.println(processor.getProcessorType());
+    public String getProcessorType() {
+        return  processor.getProcessorType();
     }
 
     //endregion
@@ -54,8 +55,8 @@ public class Computer implements Device {
 
     private final Screen screen;
 
-    public void getScreenResolution() {
-        System.out.println(screen.getResolution());
+    public String getScreenResolution() {
+        return screen.getResolution();
     }
 
     //endregion
@@ -69,8 +70,8 @@ public class Computer implements Device {
         this.keyboard = keyboard;
     }
 
-    public void getNumberOfButtonsOnKeyboard() {
-        System.out.println(keyboard.getNumberOfButtons());
+    public int getNumberOfButtonsOnKeyboard() {
+        return keyboard.getNumberOfButtons();
     }
 
     //endregion
