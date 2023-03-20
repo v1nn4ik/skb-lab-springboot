@@ -15,7 +15,6 @@ public class FisrtController {
     public ResponseEntity<String> headersList(@RequestHeader Map<String, String> headers) {
         log.info("");
         headers.forEach((key, value) -> log.info(String.format("%s = %s", key, value)));
-
         return new ResponseEntity<>(String.format("The number of headings: %s", headers.size()), HttpStatus.OK);
     }
 }
