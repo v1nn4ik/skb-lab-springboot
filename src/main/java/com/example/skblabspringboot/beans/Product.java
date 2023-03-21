@@ -11,9 +11,4 @@ public class Product {
     @Getter
     @Setter
     private Info info;
-
-    public Product(double price, Info info) {
-        this.price = price;
-        this.info = info;
-    }
 }
