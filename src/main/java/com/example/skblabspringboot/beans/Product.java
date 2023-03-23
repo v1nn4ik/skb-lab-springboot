@@ -1,14 +1,9 @@
 package com.example.skblabspringboot.beans;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
+@Data
 public class Product {
-    @Getter
-    @Setter
     private double price;
-
-    @Getter
-    @Setter
     private Info info;
 }
