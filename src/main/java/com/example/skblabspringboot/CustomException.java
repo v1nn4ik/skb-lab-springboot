@@ -2,7 +2,7 @@ package com.example.skblabspringboot;
 
 import lombok.Getter;
 
-public class CustomException extends Exception{
+public class CustomException extends RuntimeException{
     @Getter
     private final String message;
     public CustomException(String message) {
