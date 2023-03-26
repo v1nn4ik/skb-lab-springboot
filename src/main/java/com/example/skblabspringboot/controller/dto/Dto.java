@@ -1,4 +1,4 @@
-package controller.dto;
+package com.example.skblabspringboot.controller.dto;
 
 import lombok.Data;
 

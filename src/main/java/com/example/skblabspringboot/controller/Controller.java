@@ -1,4 +1,4 @@
-package controller;
+package com.example.skblabspringboot.controller;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
