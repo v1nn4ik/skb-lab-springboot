@@ -16,8 +16,7 @@ public class FisrtController {
         try {
             return new ObjectMapper().writeValueAsString(headers);
         } catch (IOException e) {
-            log.info("Exception :(");
+            return e.getMessage();
         }
-        return "";
     }
 }
