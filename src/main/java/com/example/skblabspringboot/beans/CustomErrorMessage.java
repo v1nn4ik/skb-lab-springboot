@@ -1,4 +1,4 @@
-package com.example.skblabspringboot.controller;
+package com.example.skblabspringboot.beans;
 
 import lombok.Data;
 

@@ -2,7 +2,7 @@ package com.example.skblabspringboot.controllers;
 
 import com.example.skblabspringboot.CustomException;
 import com.example.skblabspringboot.beans.Product;
-import com.example.skblabspringboot.controller.CustomErrorMessage;
+import com.example.skblabspringboot.beans.CustomErrorMessage;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
