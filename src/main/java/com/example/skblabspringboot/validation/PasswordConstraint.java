@@ -1,6 +1,4 @@
-package com.example.skblabspringboot.controller.validation;
-
-import com.example.skblabspringboot.controller.dto.ValidPassword;
+package com.example.skblabspringboot.validation;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;

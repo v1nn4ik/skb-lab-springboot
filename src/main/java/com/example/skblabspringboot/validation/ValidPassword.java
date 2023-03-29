@@ -1,6 +1,4 @@
-package com.example.skblabspringboot.controller.dto;
-
-import com.example.skblabspringboot.controller.validation.PasswordConstraint;
+package com.example.skblabspringboot.validation;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
@@ -9,7 +7,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-@Target(ElementType.FIELD)
+@Target({ElementType.FIELD, ElementType.PARAMETER})
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = PasswordConstraint.class)
 public @interface ValidPassword {
