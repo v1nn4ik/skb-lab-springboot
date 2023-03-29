@@ -3,7 +3,6 @@ package com.example.skblabspringboot.dto;
 import com.example.skblabspringboot.validation.ValidPassword;
 import lombok.Data;
 import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 @Data
@@ -14,7 +13,5 @@ public class User {
     @Email(message = "Email must be correct")
     private String email;
     @ValidPassword
-    @NotBlank
-    @Size(min = 8, max = 40, message = "Password must be between 8 and 40 characters")
     private String password;
 }

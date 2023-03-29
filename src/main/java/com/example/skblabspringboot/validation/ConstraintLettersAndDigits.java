@@ -3,7 +3,7 @@ package com.example.skblabspringboot.validation;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-public class PasswordConstraint implements ConstraintValidator<ValidPassword, String> {
+public class ConstraintLettersAndDigits implements ConstraintValidator<ValidLettersAndDigits, String> {
     @Override
     public boolean isValid(String value, ConstraintValidatorContext context) {
         var hasDigits = false;
