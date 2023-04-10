@@ -33,7 +33,7 @@ public class BeansConfig {
     public BeanDto isMainNotDefault() {
         var bean = new BeanDto();
         bean.setName("isMainNotDefault");
-        System.out.println("MAIN(ENV VAR) is default");
+        System.out.println("MAIN (ENV VAR) is default");
         return bean;
     }
 }
