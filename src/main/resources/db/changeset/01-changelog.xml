@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+
+        <changeSet id="18-04-2023-00-12" author="VinnikKA">
+            <createTable tableName="todo_list">
+                <column name="name" type="varchar(50)">
+                    <constraints nullable="false"/>
+                </column>
+                <column name="events" type="varchar(50) []">
+                    <constraints nullable="false"/>
+                </column>
+            </createTable>
+        </changeSet>
+</databaseChangeLog>
