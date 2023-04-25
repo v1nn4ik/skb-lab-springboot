@@ -20,7 +20,7 @@ public class Controller {
 
     @PostMapping("user")
     private UserDto getUser(@RequestBody UserDto user) {
-        return service.setAge(user);
+        return service.setAgeOrProfession(user);
     }
 
 }
