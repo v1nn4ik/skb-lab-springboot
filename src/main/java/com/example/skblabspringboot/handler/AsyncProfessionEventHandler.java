@@ -1,6 +1,6 @@
 package com.example.skblabspringboot.handler;
 
-import com.example.skblabspringboot.event.SetAgeOrProfessionEvent;
+import com.example.skblabspringboot.event.SetAgeAndProfessionEvent;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.event.EventListener;
@@ -15,7 +15,7 @@ public class AsyncProfessionEventHandler {
     @SneakyThrows
     @EventListener
     @Async
-    public void handlerAsyncProfessionEvent(SetAgeOrProfessionEvent setProfessionEvent) {
+    public void handlerAsyncProfessionEvent(SetAgeAndProfessionEvent setProfessionEvent) {
         Thread.sleep(3000);
         log.info("Async profession setted for {}", setProfessionEvent.getUser().getName());
     }
