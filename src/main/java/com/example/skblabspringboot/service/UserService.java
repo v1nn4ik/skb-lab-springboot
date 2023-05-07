@@ -36,7 +36,7 @@ public class UserService {
     public void saveUser(UserDatabaseDto userDatabaseDto) {
         userRepository.save(userDatabaseDto);
         applicationEventPublisher.publishEvent(new DatabaseEvent(this, userDatabaseDto));
-        UserDatabaseDto user2 = new UserDatabaseDto();
+        var user2 = new UserDatabaseDto();
         user2.setName("Bebrik");
         user2.setSurname("Rebik");
         user2.setAge(112);
